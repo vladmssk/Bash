@@ -1,0 +1,16 @@
+name: Проверка репозитория
+on: [push]
+jobs:
+  tests:
+    name: Тест скриптов
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Тест аргументов
+      run: |
+        chmod +x test_args.sh
+        ./test_args.sh
+    - name: Тест функионала скрипта
+      run: |
+        chmod +x test_script.sh
+        ./test_script.sh
