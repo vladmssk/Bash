@@ -2,12 +2,12 @@
 
 input=$1
 output=$2
-word=$3
 
-if [[ ! -f $input || $output == "" || $word == "" ]]
+if [[ $# -lt 2 ]]
 then
     echo "Не все аргументы введены"
     exit 1
 fi
 
+read -p "Введите слово: " word
 grep -w -c $word $input > $output
