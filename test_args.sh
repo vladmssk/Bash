@@ -15,17 +15,6 @@ else
     exit 1
 fi
 
-./script.sh $filename output_file > /dev/null
-
-if [[ $? -eq 1 ]]
-then
-    echo "Тест пройден :)"
-else
-    echo "Тест провален ###"
-    echo "Аргументы: $filename output_file"
-    exit 1
-fi
-
 ./script.sh $filename output_file <<< Test_word
 
 if [[ $? -eq 1 ]]

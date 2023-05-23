@@ -3,7 +3,7 @@
 input=$1
 output=$2
 
-if [[ $# -lt 2 ]]
+if [[ $# -lt 2 || ! -f $input ]]
 then
     echo "Не все аргументы введены"
     exit 1
